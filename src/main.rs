@@ -284,12 +284,12 @@ fn rapid_fire(is_enabled: bool){
       rapidfire_memory.as_mut_ptr().cast(),
       rapidfire_memory.len(),
       &mut 0);
-
+    /* forgot to remove this 
       if rapidfire_memory.contains(&0x90) {
          println!("[*] Rapid-fire is already enabled!"); // In-case they try to enable rapid fire again
          return;
       }
-
+    */
    for n in 0i64..6 {
       winapi::um::memoryapi::WriteProcessMemory(handle, 
          (0x14010614F + n) as *mut c_void, 
