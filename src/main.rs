@@ -46,13 +46,13 @@ fn main() {
    &mut 0);
    
    let player = u32::from_ne_bytes(entity);
-   let player_state = u32::from_ne_bytes(entity) + player_offsets.get(&"player_state").unwrap();
-   let player_name = u32::from_ne_bytes(entity) + player_offsets.get(&"username").unwrap();
+   let player_state = player + player_offsets.get(&"player_state").unwrap();
+   let player_name = player + player_offsets.get(&"username").unwrap();
 
-   let health = u32::from_ne_bytes(entity) + player_offsets.get(&"health").unwrap();
-   let armor = u32::from_ne_bytes(entity) + player_offsets.get(&"armor").unwrap();
-   let grenades = u32::from_ne_bytes(entity) + player_offsets.get(&"grenades").unwrap();
-   let recoil = u32::from_ne_bytes(entity) + player_offsets.get(&"recoil").unwrap();
+   let health = player + player_offsets.get(&"health").unwrap();
+   let armor = player + player_offsets.get(&"armor").unwrap();
+   let grenades = player + player_offsets.get(&"grenades").unwrap();
+   let recoil = player + player_offsets.get(&"recoil").unwrap();
 
    println!("[0x{:x}] is the player address", player);
    println!("[0x{:x}] is the player_state address", player_state);
